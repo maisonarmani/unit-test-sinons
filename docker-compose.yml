@@ -4,7 +4,7 @@ services:
     build:
       context: .
     environment:
-      - NODE_ENV=dev
+      - NODE_ENV=staging
       - APP_DIR=/var/www/
     volumes:
       - .:/var/www/

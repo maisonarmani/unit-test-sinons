@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 export default class Tester{
     async getAlbumById (id) {
         const requestUrl = `https://jsonplaceholder.typicode.com/albums/${id}/photos?_limit=5`;

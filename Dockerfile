@@ -16,6 +16,4 @@ COPY ./scripts/app /usr/local/bin/
 
 RUN chmod +x -R /usr/local/bin
 
-EXPOSE 5000
-
 ENTRYPOINT ["start.sh"]
