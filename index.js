@@ -1,10 +1,10 @@
-const request = require('request');
+import axios from 'axios'
 
 export default class Tester{
     async getAlbumById (id) {
         const requestUrl = `https://jsonplaceholder.typicode.com/albums/${id}/photos?_limit=5`;
         return new Promise((resolve, reject) => {
-            request.get(requestUrl, (err, res, body) => {
+            axios.get(requestUrl, (err, res, body) => {
                 if (err) {
                     return reject(err);
                 }

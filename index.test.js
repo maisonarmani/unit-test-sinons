@@ -1,15 +1,12 @@
 import { expect } from 'chai'
-import request from 'request'
+import axios from 'axios'
 import sinon from 'sinon'
 import Tester from './index'
-
-console.log(Tester)
-console.log(request)
 
 describe('with Stub: getPhotosByAlbumId', () => {
   const tester = new Tester()
   before(() => {
-    sinon.stub(request, 'get')
+    sinon.stub(axios, 'get')
       .yields(null, null, JSON.stringify([
         {
           "albumId": 1,
@@ -50,7 +47,7 @@ describe('with Stub: getPhotosByAlbumId', () => {
   });
 
   after(() => {
-    request.restore();
+    // clean up
   });
 
   it('should getPhotosByAlbumId', (done) => {

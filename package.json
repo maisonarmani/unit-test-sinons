@@ -11,8 +11,8 @@
     "@babel/preset-env": "^7.7.4",
     "@babel/register": "^7.7.4",
     "@babel/runtime": "^7.15.4",
-    "regenerator-runtime": "^0.13.9",
-    "request": "^2.88.0"
+    "axios": "^0.24.0",
+    "regenerator-runtime": "^0.13.9"
   },
   "scripts": {
     "test": "mocha index.test.js --require @babel/register",
