@@ -1,0 +1,16 @@
+version: '3'
+services:
+  getwelp_template:
+    build:
+      context: .
+    environment:
+      - NODE_ENV=dev
+      - APP_DIR=/var/www/
+    volumes:
+      - .:/var/www/
+      - /var/www/node_modules
+    networks:
+      - getwelp-vpc
+networks:
+  getwelp-vpc:
+    external: true

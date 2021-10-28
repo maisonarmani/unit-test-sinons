@@ -1,17 +1,31 @@
 {
-  "name": "PhotoAlbum",
+  "name": "getwelp-test",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.7.4",
+    "@babel/runtime": "^7.15.4",
+    "regenerator-runtime": "^0.13.9",
     "request": "^2.88.0"
   },
   "scripts": {
-    "test": "mocha index.test.js"
+    "test": "mocha index.test.js --require @babel/register",
+    "build": "rm -rf dist && babel index.js -d dist && babel src -d dist/app",
+    "start": "node dist/index.js",
+    "lint": "eslint . --fix",
+    "start-dev": "nodemon -r dotenv/config --exec babel-node src/index.js"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "dotenv": "^9.0.2",
     "mocha": "^6.2.2",
+    "nodemon": "^2.0.7",
     "sinon": "^8.0.2"
   }
 }
